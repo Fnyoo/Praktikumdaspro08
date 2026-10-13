@@ -39,6 +39,47 @@ public class studycase2_13 {
                             + (4 - documentCount));
                 }
             }
+
+        } else if (activityType.equalsIgnoreCase("PKM")) {
+            System.out.print("Funding approval (1=Approved, 0=Not approved): ");
+            int fundingStatus = sc.nextInt();
+
+            System.out.print("Number of uploaded documents (0-4): ");
+            int documentCount = sc.nextInt();
+
+            if (fundingStatus == 1 && documentCount == 4) {
+                System.out.println("Name: " + studentName);
+                System.out.println("Funding status: Granted");
+            } else {
+                System.out.println("Name: " + studentName);
+                System.out.println("Funding status: Not granted");
+
+                if (fundingStatus == 0) {
+                    System.out.println("PKM funding was not approved.");
+                }
+
+                if (documentCount < 4) {
+                    System.out.println("Missing documents: "
+                            + (4 - documentCount));
+                }
+            }
+
+        } else if (activityType.equalsIgnoreCase("Others")) {
+            System.out.print("Number of uploaded documents (0-4): ");
+            int documentCount = sc.nextInt();
+
+            System.out.println("Name: " + studentName);
+            System.out.println("Funding status: Not granted");
+
+            if (documentCount < 4) {
+                System.out.println("Missing documents: "
+                        + (4 - documentCount));
+            }
+
+        } else {
+            System.out.println("Invalid activity type.");
         }
+        sc.close();
     }
-}    
+}
+    
